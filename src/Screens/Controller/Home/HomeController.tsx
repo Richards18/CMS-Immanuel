@@ -9,7 +9,7 @@ interface IProps {
 
 const HomeController: React.FC<IProps> = ({ navigation }) => {
   const renderMenuIcon = () => {
-    console.log('Menu Icon pressed');
+    // console.log('Menu Icon pressed');
     // This is the correct way to open the drawer
     navigation.dispatch(DrawerActions.openDrawer());
   };

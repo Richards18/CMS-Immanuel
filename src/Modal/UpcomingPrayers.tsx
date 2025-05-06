@@ -2,10 +2,13 @@ import React, {FC} from 'react';
 import {View, Text, SafeAreaView, ScrollView, Pressable} from 'react-native';
 import {COLORS} from '../Constants/Colors';
 import {FONT_SIZE} from '../Constants/FontSize';
+import {useNavigation} from '@react-navigation/native';
+import {SCREENS} from '../Constants/ScreenNames';
 
 interface Props {}
 
 const UpcomingPrayers: FC<Props> = () => {
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: COLORS.White}}>
       <ScrollView
@@ -65,7 +68,9 @@ const UpcomingPrayers: FC<Props> = () => {
 
           {/* Buttons */}
           <Pressable
-            onPress={() => {}}
+            onPress={() => {
+              // navigation.navigate(SCREENS.EVENTS_SCREEN);
+            }}
             style={({pressed}) => ({
               backgroundColor: pressed ? COLORS.ButtonColor : COLORS.White,
               borderColor: COLORS.ButtonColor,
@@ -94,7 +99,9 @@ const UpcomingPrayers: FC<Props> = () => {
           </Pressable>
 
           <Pressable
-            onPress={() => {}}
+            onPress={() => {
+              navigation.navigate(SCREENS.NEWS_SCREEN);
+            }}
             style={({pressed}) => ({
               backgroundColor: pressed ? COLORS.ButtonColor : COLORS.White,
               borderColor: COLORS.ButtonColor,

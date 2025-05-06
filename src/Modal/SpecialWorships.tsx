@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, useRef, useState} from 'react';
 import {
   View,
   Text,
@@ -6,6 +6,7 @@ import {
   Image,
   FlatList,
   Dimensions,
+  TouchableOpacity,
 } from 'react-native';
 import {COLORS} from '../Constants/Colors';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -67,6 +68,31 @@ const worshipItems = [
 ];
 
 const SpecialWorships: FC = () => {
+  const flatListRef = useRef<FlatList>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleScrollForward = () => {
+    if (flatListRef.current) {
+      const nextIndex = Math.min(currentIndex + 1, worshipItems.length - 1);
+      flatListRef.current.scrollToIndex({
+        animated: true,
+        index: nextIndex,
+      });
+      setCurrentIndex(nextIndex);
+    }
+  };
+
+  const handleScrollBack = () => {
+    if (flatListRef.current) {
+      const prevIndex = Math.max(currentIndex - 1, 0);
+      flatListRef.current.scrollToIndex({
+        animated: true,
+        index: prevIndex,
+      });
+      setCurrentIndex(prevIndex);
+    }
+  };
+
   return (
     <SafeAreaView
       style={{
@@ -122,14 +148,17 @@ const SpecialWorships: FC = () => {
           alignItems: 'center',
           marginTop: 25,
         }}>
-        <Icon
-          name="chevron-back"
-          size={20}
-          color="#FFF"
-          style={{paddingHorizontal: 4}}
-        />
+        <TouchableOpacity onPress={handleScrollBack}>
+          <Icon
+            name="chevron-back"
+            size={20}
+            color="#FFF"
+            style={{paddingHorizontal: 4}}
+          />
+        </TouchableOpacity>
 
         <FlatList
+          ref={flatListRef}
           data={worshipItems}
           horizontal
           keyExtractor={item => item.id}
@@ -180,12 +209,14 @@ const SpecialWorships: FC = () => {
           )}
         />
 
-        <Icon
-          name="chevron-forward"
-          size={20}
-          color="#FFF"
-          style={{paddingHorizontal: 4}}
-        />
+        <TouchableOpacity onPress={handleScrollForward}>
+          <Icon
+            name="chevron-forward"
+            size={20}
+            color="#FFF"
+            style={{paddingHorizontal: 4}}
+          />
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );

@@ -17,6 +17,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
 import {FONT_SIZE} from '../../../../Constants/FontSize';
 import {COLORS} from '../../../../Constants/Colors';
+import Header from '../../../../Header/Header';
 
 const screenWidth = Dimensions.get('window').width;
 
@@ -72,12 +73,11 @@ const DiamondJubilee: FC = () => {
 
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: COLORS.White}}>
-      <StatusBar
+      {/* <StatusBar
         backgroundColor={COLORS.PrimaryColor}
         barStyle="light-content"
       />
 
-      {/* Header */}
       <View
         style={{
           flexDirection: 'row',
@@ -105,7 +105,12 @@ const DiamondJubilee: FC = () => {
           }}>
           வைர விழா புத்தக வெளியீட்டு 2023
         </Text>
-      </View>
+      </View> */}
+
+      <Header
+        title="வைர விழா புத்தக வெளியீட்டு 2023"
+        screen="DIAMOND_JUBILEE"
+      />
 
       {/* Title */}
       <View style={{padding: 16}}>

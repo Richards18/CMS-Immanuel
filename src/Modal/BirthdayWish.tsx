@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, {FC} from 'react';
 import {
   View,
   Text,
@@ -7,10 +7,10 @@ import {
   ImageBackground,
   TouchableOpacity,
 } from 'react-native';
-import { COLORS } from '../Constants/Colors';
-import { FONT_SIZE } from '../Constants/FontSize';
+import {COLORS} from '../Constants/Colors';
+import {FONT_SIZE} from '../Constants/FontSize';
 
-interface Props { }
+interface Props {}
 
 const BirthdayWish: FC<Props> = () => {
   const today = new Date();
@@ -34,21 +34,21 @@ const BirthdayWish: FC<Props> = () => {
   const formattedDate = `${dayOfMonth} ${month}`;
 
   const peopleWithSameBirthday = [
-    { name: 'Mr. Manova Robinson J' },
-    { name: 'Mr. John Doe' },
+    // { name: 'Mr. Manova Robinson J' },
+    {name: 'Mr. Immanuel J'},
   ];
 
   return (
-    <SafeAreaView style={{ flex: 1, padding: 20, marginTop: 20 }}>
+    <SafeAreaView style={{flex: 1, padding: 20, marginTop: 20}}>
       {/* Header */}
-      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+      <View style={{flexDirection: 'row', alignItems: 'center'}}>
         <Text
-          style={{ flex: 1, fontSize: 20, fontWeight: 'bold', color: '#fc6a64' }}>
+          style={{flex: 1, fontSize: 20, fontWeight: 'bold', color: '#fc6a64'}}>
           இன்றைய பிறந்த நாள் வாழ்த்துக்கள்
         </Text>
         <Image
           source={require('../Assets/birthday-1.png')}
-          style={{ width: 85, height: 80 }}
+          style={{width: 85, height: 80}}
         />
       </View>
 
@@ -67,7 +67,7 @@ const BirthdayWish: FC<Props> = () => {
           marginBottom: 20,
           justifyContent: 'center',
           alignItems: 'center',
-          shadowOffset: { width: 0, height: 2 },
+          shadowOffset: {width: 0, height: 2},
           shadowOpacity: 0.1,
           shadowRadius: 4,
         }}>
@@ -80,7 +80,7 @@ const BirthdayWish: FC<Props> = () => {
             textAlign: 'center',
             fontFamily: 'Arial',
             textShadowColor: 'rgba(0, 0, 0, 0.2)',
-            textShadowOffset: { width: 1, height: 1 },
+            textShadowOffset: {width: 1, height: 1},
             textShadowRadius: 2,
             marginBottom: 20,
           }}>
@@ -103,10 +103,10 @@ const BirthdayWish: FC<Props> = () => {
             paddingLeft: 20,
           }}>
           {/* Image & Date */}
-          <View style={{ position: 'relative', marginRight: 10 }}>
+          <View style={{position: 'relative', marginRight: 10}}>
             <Image
               source={require('../Assets/bday-male.png')}
-              style={{ width: 50, height: 50, borderRadius: 50 }}
+              style={{width: 50, height: 50, borderRadius: 50}}
               resizeMode="contain"
             />
             <Image
@@ -123,7 +123,7 @@ const BirthdayWish: FC<Props> = () => {
             <Text
               style={{
                 position: 'absolute',
-                transform: [{ translateX: -16 }, { translateY: -2 }],
+                transform: [{translateX: -16}, {translateY: -2}],
                 fontSize: 12,
                 fontWeight: 'bold',
                 color: '#fc6a64',

@@ -17,6 +17,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
 import {FONT_SIZE} from '../../../../Constants/FontSize';
 import {COLORS} from '../../../../Constants/Colors';
+import Header from '../../../../Header/Header';
 
 const screenWidth = Dimensions.get('window').width;
 
@@ -94,40 +95,7 @@ const HillPeople: FC = () => {
 
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: COLORS.White}}>
-      <StatusBar
-        backgroundColor={COLORS.PrimaryColor}
-        barStyle="light-content"
-      />
-
-      {/* Header */}
-      <View
-        style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          backgroundColor: COLORS.PrimaryColor,
-          paddingHorizontal: 10,
-          height: 80,
-          borderBottomLeftRadius: 20,
-          borderBottomRightRadius: 20,
-          elevation: 4,
-        }}>
-        <TouchableOpacity
-          onPress={() => navigation.goBack()}
-          style={{padding: 4, marginRight: 15}}>
-          <Ionicons name="arrow-back" size={24} color={COLORS.White} />
-        </TouchableOpacity>
-        <Text
-          style={{
-            fontSize: FONT_SIZE.font_18,
-            fontWeight: 'bold',
-            color: COLORS.White,
-            flex: 1,
-            textAlign: 'center',
-            marginLeft: -20,
-          }}>
-          மலை வாழ் மக்கள் சுற்றுப்பயணம் 2014
-        </Text>
-      </View>
+      <Header title="மலை வாழ் மக்கள் சுற்றுப்பயணம் 2014" screen="HILL_PEOPLE" />
 
       {/* Title */}
       <View style={{padding: 16}}>

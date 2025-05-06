@@ -148,7 +148,9 @@ const CustomMenuBar: FC<Props> = props => {
 
         <DrawerItem
           label="தொடர்பு கொள்ள"
-          onPress={() => {}}
+          onPress={() => {
+            navigation.navigate(SCREENS.CONTACT_SCREEN);
+          }}
           labelStyle={{
             color: COLORS.PrimaryColor,
             fontSize: FONT_SIZE.font_16,
@@ -195,7 +197,7 @@ const CustomMenuBar: FC<Props> = props => {
               fontSize: 14,
               textAlign: 'center',
             }}>
-            Version 1.0.0
+            Version 1.0
           </Text>
         </View>
       </DrawerContentScrollView>

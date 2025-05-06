@@ -17,6 +17,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
 import {FONT_SIZE} from '../../../../Constants/FontSize';
 import {COLORS} from '../../../../Constants/Colors';
+import Header from '../../../../Header/Header';
 
 const screenWidth = Dimensions.get('window').width;
 
@@ -73,12 +74,11 @@ const SilverJubilee: FC = () => {
 
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: COLORS.White}}>
-      <StatusBar
+      {/* <StatusBar
         backgroundColor={COLORS.PrimaryColor}
         barStyle="light-content"
       />
 
-      {/* Header */}
       <View
         style={{
           flexDirection: 'row',
@@ -106,7 +106,12 @@ const SilverJubilee: FC = () => {
           }}>
           25 ஆண்டு வெள்ளி விழா கொண்டாட்டம்
         </Text>
-      </View>
+      </View> */}
+
+      <Header
+        title="25 ஆண்டு வெள்ளி விழா கொண்டாட்டம்"
+        screen="SILVER_JUBILEE"
+      />
 
       {/* Title */}
       <View style={{padding: 16}}>

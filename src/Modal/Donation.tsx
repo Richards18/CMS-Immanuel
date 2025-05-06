@@ -70,24 +70,16 @@ const DonationModal: FC<Props> = () => {
       {/* Donation Image Section */}
       <View style={{marginBottom: 5, alignItems: 'center'}}>
         <Image
-          source={{
-            uri: 'https://cmsimmanuelchurch.com/img/donation-img.09c8b0c8.png',
-          }}
-          style={{
-            width: '100%',
-            height: 250,
-            borderRadius: 20,
-            marginBottom: 5,
-            resizeMode: 'contain',
-            borderWidth: 2,
-            borderColor: '#4caf50', // Green border to match the title
-          }}
+          source={require('../Assets/Donation.png')}
+          style={{width: 300, height: 150}}
+          resizeMode="contain"
         />
       </View>
 
       {/* Call to Action */}
       <View style={{alignItems: 'center'}}>
         <TouchableOpacity
+          activeOpacity={0.6}
           style={{
             backgroundColor: '#81c784', // Pastel green button
             paddingVertical: 14,

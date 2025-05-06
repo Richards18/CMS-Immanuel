@@ -26,6 +26,8 @@ import DiamondJubilee from '../Screens/Viewer/Gallery/DiamondJubilee/DiamondJubi
 import DiamondJubileeNews from '../Screens/Viewer/News/DiamondJubileeNews/DiamondJubileeNews';
 import HemaJohnConcert from '../Screens/Viewer/News/HemaJohnConcert/HemaJohnConcert';
 import WomensFestNews from '../Screens/Viewer/News/WomensFest/WomensFestNews';
+import ContactController from '../Screens/Controller/Contact/ContactController';
+import Events from '../Modal/Events';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -38,6 +40,7 @@ const MainStack = () => {
       <Stack.Screen name={SCREENS.SPLASH_SCREEN} component={SplashScreen} />
       <Stack.Screen name={SCREENS.HOME_SCREEN} component={HomeController} />
       <Stack.Screen name={SCREENS.NEWS_SCREEN} component={NewsController} />
+      <Stack.Screen name={SCREENS.EVENTS_SCREEN} component={Events} />
       <Stack.Screen
         name={SCREENS.GALLERY_SCREEN}
         component={GalleryController}
@@ -55,6 +58,10 @@ const MainStack = () => {
 
       <Stack.Screen name={SCREENS.PRAY_REQUEST} component={PrayReqController} />
       <Stack.Screen name={SCREENS.OUR_CHURCH} component={OurChurchController} />
+      <Stack.Screen
+        name={SCREENS.CONTACT_SCREEN}
+        component={ContactController}
+      />
       <Stack.Screen
         name={SCREENS.DIAMONDJUBI_NEWS}
         component={DiamondJubileeNews}
